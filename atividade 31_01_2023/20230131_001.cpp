@@ -1,9 +1,6 @@
 #include <cstdio>
 #include <cstring>
 
-
-void eraseCharacter(char string[100]);
-
 void invert(char string[]){
     int i;
     for(i=strlen(string)-1;i>=0;i--){

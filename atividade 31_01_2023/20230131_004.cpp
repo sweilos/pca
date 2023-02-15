@@ -4,7 +4,7 @@
 
 int main(){
     char s1[lim], s2[lim],con[lim],c;
-    int i;
+    int i,cont=0;
     scanf(" %s",&s1);
     printf("String length: %d\n",strlen(s1));
     scanf(" %s",&s2);
@@ -25,8 +25,10 @@ int main(){
     scanf(" %c",&c);
 
     for(i=0; i<strlen(s1); i++){
-
+        if(c==s1[i]);
+        cont++;
     }
+    printf("\n o caracter aparece %d vezes",cont);
 
     return 0;
 

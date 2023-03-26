@@ -1,38 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int i;
+void find_number(int *a, int *b)	{
+    int *p;
+    int cont = 0;
 
-int* funcao(int *inicio, int *fim){
-    int n = 2;
-    /*printf("qual valor quer encontrar no vetor?\n");
-    scanf("%d", &n);*/
-
-    for (i = *inicio; i < *fim ; i+=1 ){
-        if(*(inicio+i) == n){
-            return inicio+i;
+    for (;a <= b; a++)	{
+        if (*a == 2)	{
+            if (cont == 0)	{
+                p = a;
+            }
+            cont++;
+            printf("%p ", a);
         }
     }
-    return NULL;
+    printf("primeira ocorrencia: %p", p);
 }
 
-int main(){
-    int vetor[10]={1, 2, 3, 2, 4, 2, 5, 6, 7, 8};
-    int *inicio = &vetor[0], *fim = &vetor[9], *prim;
-    prim = funcao(inicio, fim);
-    if(prim == NULL){
-        printf("Valor nao encontrado no vetor");
-        return 0;
-    }else{
+int main()	{
+    int vet[10] = {2, 2, 2, 2, 4, 5, 6, 2, 7, 8};
+    find_number(&vet[0], &vet[9]);
 
-        printf("o primeiro valor de 2 esta na %d posicao do vetor\n", *prim);
-        printf("E todas as suas ocorrencias estao nos seguintes endereços de memoria:\n");
-        for(i = *inicio; i < *fim; i += 1){
-            if(*(inicio+i) == *prim){
-                printf("%d\n", (inicio+i));
-            }
-        }
-    }
     return 0;
 }
 
